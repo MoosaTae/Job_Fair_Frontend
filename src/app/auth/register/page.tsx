@@ -52,6 +52,7 @@ const RegisterPage = () => {
         throw new Error('Network response was not ok');
       }
       alert('Registration successful');
+      window.location.href = '/api/auth/signin';
     } catch (error) {
       console.error('An unexpected error happened:', error);
       alert('Registration failed');
