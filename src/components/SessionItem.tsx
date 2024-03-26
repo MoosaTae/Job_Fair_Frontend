@@ -58,7 +58,8 @@ export default function SessionItem({
         )}
 
         <div className="flex flex-row font-semibold">
-          Date :<p className="px-1 font-normal">{date.toString()}</p>
+          Date :
+          <p className="px-1 font-normal">{new Date(date).toLocaleString()}</p>
         </div>
       </div>
       <div className="flex flex-row self-end">

@@ -83,7 +83,7 @@ function SessionEdit({
           <div>
             <h2 className="text-lg font-medium">Session Details</h2>
             <p>Company: {session.company.name}</p>
-            <p>Old Date: {new Date(session.date).toISOString()}</p>
+            <p>Old Date: {new Date(session.date).toLocaleString()}</p>
           </div>
           <form onSubmit={handleSubmit}>
             <div className="text-md mt-[15px] w-fit space-y-2 text-left text-black">
