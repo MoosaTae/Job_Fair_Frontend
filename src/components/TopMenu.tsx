@@ -1,11 +1,11 @@
-import { authOptions } from '@/app/api/auth/[...nextauth]/route';
+'use client';
 import TopMenuItem from './TopMenuItem';
 import Image from 'next/image';
 import Link from 'next/link';
-import { getServerSession } from 'next-auth';
+import { useSession } from 'next-auth/react';
 
-const TopMenu = async () => {
-  const session = await getServerSession(authOptions);
+const TopMenu = () => {
+  const { data: session } = useSession();
 
   return (
     <div className="flex w-full flex-row flex-wrap">
@@ -16,7 +16,6 @@ const TopMenu = async () => {
         </div>
         <div className="jusitfy-center flex">
           <TopMenuItem title="Home" pageRef="/" />
-          {/* <TopMenuItem title="About us" pageRef="/about" /> */}
           <TopMenuItem title="Company" pageRef="/company" />
           <TopMenuItem title="Session" pageRef="/session" />
         </div>
@@ -37,12 +36,6 @@ const TopMenu = async () => {
               </Link>
             </div>
           )}
-          {/* <Link
-            href="auth/login"
-            className="flex h-[60px] w-[120px] items-center justify-center rounded-3xl bg-blue1"
-          >
-            Login
-          </Link> */}
         </div>
       </div>
     </div>
